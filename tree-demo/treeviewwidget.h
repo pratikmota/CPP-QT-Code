@@ -12,7 +12,6 @@
 #include <QUrl>
 
 
-
 class TreeViewWidget : public QWidget
 {
     Q_OBJECT
