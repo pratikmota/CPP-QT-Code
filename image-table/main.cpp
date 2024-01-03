@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
     model.setColumnCount(2);
     model.setHeaderData(0, Qt::Horizontal, "Image");
     model.setHeaderData(1, Qt::Horizontal, "Description");
+    model.setHeaderData(2, Qt::Horizontal, "Select");
 
     // Add rows with images
     QString imagePath1 = "D:/PROGRAMMING/QT/IMAGES/pratik.jpg"; // Replace with your image path
@@ -38,6 +39,11 @@ int main(int argc, char *argv[])
         item = new QStandardItem("Description for image " + QString::number(i+1));
         item->setBackground(Qt::lightGray);
         model.setItem(i, 1, item);
+
+        QStandardItem *citem = new QStandardItem();
+        citem->setData(Qt::Checked, Qt::CheckStateRole); // Set initial checked state
+        model.setItem(i, 2, citem);
+
     }
 
     // Create a table view
